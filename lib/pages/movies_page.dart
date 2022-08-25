@@ -9,6 +9,7 @@ class MoviesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black.withOpacity(0.83),
       body: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[

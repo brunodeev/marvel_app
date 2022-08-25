@@ -22,15 +22,25 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Colors.black.withOpacity(0.9),
           title: const Center(
-        child: Text(
-          'Notflix',
-        ),
-      )),
+            child: Text(
+              'Marvelflix',
+              style: TextStyle(
+                fontSize: 32,
+                fontFamily: 'Muli',
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+          )),
       body: SafeArea(
         child: _pages.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black.withOpacity(0.9),
+        selectedItemColor: Colors.white,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Pesquisar'),
