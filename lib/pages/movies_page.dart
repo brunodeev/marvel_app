@@ -11,9 +11,14 @@ class MoviesPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black.withOpacity(0.83),
       body: ListView(
+        physics: BouncingScrollPhysics(),
+        padding: EdgeInsets.symmetric(vertical: 35),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          Center(child: MovieCard()),
+          MovieCard(),
+          MovieCard(),
+          MovieCard(),
+          MovieCard(),
         ],
       ),
     );

@@ -22,7 +22,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.black.withOpacity(0.9),
+          backgroundColor: Color.fromARGB(255, 17, 17, 17),
           title: const Center(
             child: Text(
               'Marvelflix',
@@ -37,8 +37,9 @@ class _MainPageState extends State<MainPage> {
         child: _pages.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black.withOpacity(0.9),
+        backgroundColor: Color.fromARGB(255, 17, 17, 17),
         selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey.withOpacity(0.3),
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
