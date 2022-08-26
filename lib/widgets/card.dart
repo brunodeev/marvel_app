@@ -3,90 +3,120 @@
 import 'package:flutter/material.dart';
 
 class MovieCard extends StatelessWidget {
-  const MovieCard({Key? key}) : super(key: key);
+  const MovieCard(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.sinopse})
+      : super(key: key);
+
+  final String image;
+  final String title;
+  final String sinopse;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(30),
-        child: Container(
-          width: MediaQuery.of(context).size.width * 0.8,
-          height: MediaQuery.of(context).size.height * 0.7,
-          decoration: BoxDecoration(
-            color: Colors.grey[800],
-          ),
-          child: Stack(children: [
-            Container(
-              width: MediaQuery.of(context).size.width * 1,
-              height: MediaQuery.of(context).size.height * 1,
-              child: Image.network(
-                'https://terrigen-cdn-dev.marvel.com/content/prod/2x/MLou2_Payoff_1-Sht_Online_DOM_v7_Sm.jpg',
-                fit: BoxFit.cover,
-              ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.45),
+                  blurStyle: BlurStyle.normal,
+                  spreadRadius: 2,
+                  blurRadius: 10,
+                  offset: Offset(10, 10),
+                )
+              ],
             ),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  stops: [
-                    0.3,
-                    0.6,
-                  ],
-                  colors: [
-                    Colors.black.withOpacity(0.85),
-                    Colors.transparent,
-                  ],
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.7,
+                decoration: BoxDecoration(
+                  color: Colors.grey[800],
                 ),
+                child: Stack(children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 1,
+                    height: MediaQuery.of(context).size.height * 1,
+                    child: Image.network(
+                      image,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        stops: [
+                          0.4,
+                          0.6,
+                        ],
+                        colors: [
+                          Colors.black.withOpacity(0.85),
+                          Colors.transparent,
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 25),
+                          child: Text(
+                            title,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontFamily: 'Muli',
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 10,
+                            right: 25,
+                            bottom: 20,
+                            left: 25,
+                          ),
+                          child: Text(
+                            sinopse,
+                            style: TextStyle(
+                                color: Colors.grey[500],
+                                fontSize: 12,
+                                fontFamily: 'Muli',
+                                fontWeight: FontWeight.w600),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                                child: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 25, right: 25, bottom: 20),
+                              child: ElevatedButton(
+                                  onPressed: () {}, child: Text('Assistido')),
+                            )),
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ]),
               ),
             ),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Vingadores: Ultimato',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 27,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w800),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 10,
-                      right: 25,
-                      bottom: 20,
-                      left: 25,
-                    ),
-                    child: Text(
-                      'Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.',
-                      style: TextStyle(
-                          color: Colors.grey[400],
-                          fontSize: 12,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.w600),
-                      textAlign: TextAlign.justify,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 25, right: 25, bottom: 20),
-                        child: ElevatedButton(
-                            onPressed: () {}, child: Text('Assistido')),
-                      )),
-                    ],
-                  )
-                ],
-              ),
-            )
-          ]),
-        ),
+          ),
+        ],
       ),
     );
   }
