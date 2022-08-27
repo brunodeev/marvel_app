@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_filmes/pages/movies_page.dart';
-import 'package:app_filmes/pages/profile_page.dart';
+import 'package:app_filmes/pages/search_page.dart';
 import 'package:app_filmes/pages/settings_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,7 +13,7 @@ class MainPage extends StatefulWidget {
 int _selectedIndex = 0;
 List<Widget> _pages = <Widget>[
   MoviesPage(),
-  ProfilePage(),
+  SearchPage(),
   SettingsPage(),
 ];
 

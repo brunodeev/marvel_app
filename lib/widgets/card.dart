@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, unnecessary_this, prefer_interpolation_to_compose_strings, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, unnecessary_this, prefer_interpolation_to_compose_strings, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, unused_local_variable, prefer_function_declarations_over_variables
 
 import 'package:flutter/material.dart';
 
-class MovieCard extends StatelessWidget {
+class MovieCard extends StatefulWidget {
   const MovieCard(
       {Key? key,
       required this.image,
@@ -15,6 +15,11 @@ class MovieCard extends StatelessWidget {
   final String sinopse;
 
   @override
+  State<MovieCard> createState() => _MovieCardState();
+}
+
+class _MovieCardState extends State<MovieCard> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -25,7 +30,7 @@ class MovieCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.45),
+                  color: Colors.black.withOpacity(0.3),
                   blurStyle: BlurStyle.normal,
                   spreadRadius: 2,
                   blurRadius: 10,
@@ -46,7 +51,7 @@ class MovieCard extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 1,
                     height: MediaQuery.of(context).size.height * 1,
                     child: Image.network(
-                      image,
+                      widget.image,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -60,57 +65,64 @@ class MovieCard extends StatelessWidget {
                           0.6,
                         ],
                         colors: [
-                          Colors.black.withOpacity(0.85),
+                          Colors.black.withOpacity(0.8),
                           Colors.transparent,
                         ],
                       ),
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
-                          child: Text(
-                            title,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
-                                fontFamily: 'Muli',
-                                fontWeight: FontWeight.w800),
-                          ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Text(
+                          widget.title,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontFamily: 'Muli',
+                              fontWeight: FontWeight.w800),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 10,
-                            right: 25,
-                            bottom: 20,
-                            left: 25,
-                          ),
-                          child: Text(
-                            sinopse,
-                            style: TextStyle(
-                                color: Colors.grey[500],
-                                fontSize: 12,
-                                fontFamily: 'Muli',
-                                fontWeight: FontWeight.w600),
-                            textAlign: TextAlign.justify,
-                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 10,
+                          right: 25,
+                          bottom: 20,
+                          left: 25,
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                                child: Padding(
+                        child: Text(
+                          widget.sinopse,
+                          style: TextStyle(
+                              color: Colors.grey[500],
+                              fontSize: 12,
+                              fontFamily: 'Muli',
+                              fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Padding(
                               padding: const EdgeInsets.only(
                                   left: 25, right: 25, bottom: 20),
                               child: ElevatedButton(
-                                  onPressed: () {}, child: Text('Assistido')),
-                            )),
-                          ],
-                        )
-                      ],
-                    ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.blueAccent.withOpacity(0.6),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  'Assistido',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
                   )
                 ]),
               ),
