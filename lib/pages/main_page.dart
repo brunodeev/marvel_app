@@ -12,9 +12,9 @@ class MainPage extends StatefulWidget {
 
 int _selectedIndex = 0;
 List<Widget> _pages = <Widget>[
-  MoviesPage(),
-  SearchPage(),
-  SettingsPage(),
+  const MoviesPage(),
+  const SearchPage(),
+  const SettingsPage(),
 ];
 
 class _MainPageState extends State<MainPage> {
@@ -22,7 +22,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 17, 17, 17),
+          backgroundColor: const Color.fromARGB(255, 17, 17, 17),
           title: const Center(
             child: Text(
               'Marvelflix',
@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
         child: _pages.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 17, 17, 17),
+        backgroundColor: const Color.fromARGB(255, 17, 17, 17),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey.withOpacity(0.3),
         showSelectedLabels: false,

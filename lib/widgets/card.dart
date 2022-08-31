@@ -50,7 +50,7 @@ class _MovieCardState extends State<MovieCard> {
                   Container(
                     width: MediaQuery.of(context).size.width * 1,
                     height: MediaQuery.of(context).size.height * 1,
-                    child: Image.network(
+                    child: Image.asset(
                       widget.image,
                       fit: BoxFit.cover,
                     ),
