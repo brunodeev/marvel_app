@@ -18,6 +18,8 @@ class MovieCard extends StatefulWidget {
   State<MovieCard> createState() => _MovieCardState();
 }
 
+bool isPressed = false;
+
 class _MovieCardState extends State<MovieCard> {
   @override
   Widget build(BuildContext context) {

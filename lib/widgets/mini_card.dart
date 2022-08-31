@@ -49,7 +49,7 @@ class MiniCard extends StatelessWidget {
                         width: 25,
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(vertical: 12),
+                        padding: EdgeInsets.symmetric(vertical: 7),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +58,7 @@ class MiniCard extends StatelessWidget {
                               title,
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                  fontSize: 19,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w800,
                                   fontFamily: 'Muli'),
                             ),
