@@ -91,7 +91,7 @@ class _MovieCardState extends State<MovieCard> {
                         padding: const EdgeInsets.only(
                           top: 10,
                           right: 25,
-                          bottom: 20,
+                          bottom: 40,
                           left: 25,
                         ),
                         child: Text(
@@ -104,26 +104,6 @@ class _MovieCardState extends State<MovieCard> {
                           textAlign: TextAlign.justify,
                         ),
                       ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 25, right: 25, bottom: 20),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.blueAccent.withOpacity(0.6),
-                                ),
-                                onPressed: () {},
-                                child: Text(
-                                  'Assistido',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
                     ],
                   )
                 ]),

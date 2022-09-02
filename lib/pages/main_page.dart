@@ -13,7 +13,7 @@ class MainPage extends StatefulWidget {
 int _selectedIndex = 0;
 List<Widget> _pages = <Widget>[
   const MoviesPage(),
-  const SearchPage(),
+  SearchPage(),
   const SettingsPage(),
 ];
 
