@@ -1,16 +1,5 @@
-# app_filmes
+# MARVELFLIX
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h4>Este é um projeto pessoal que fiz com o objetivo de me auxiliar quanto ao acompanhamento dos filmes da Marvel.</h4>
+<h4>O app te permite realizar buscas de filmes de todos os filmes até a fase 3 do universo Marvel, e também marcar os filmes já vistos por ti.</h4>
+<h4><b>Espero que gostem, aberto a sujestões.<b></h4>
